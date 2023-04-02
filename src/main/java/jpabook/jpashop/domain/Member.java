@@ -13,10 +13,7 @@ public class Member extends BaseEntity {
     private String name;
 
     @Embedded
-    private Period workPeriod;
-
-    @Embedded
-    private Address homeAddress;
+    private Address address;
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
@@ -37,20 +34,12 @@ public class Member extends BaseEntity {
         this.name = name;
     }
 
-    public Period getWorkPeriod() {
-        return workPeriod;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setWorkPeriod(Period workPeriod) {
-        this.workPeriod = workPeriod;
-    }
-
-    public Address getHomeAddress() {
-        return homeAddress;
-    }
-
-    public void setHomeAddress(Address homeAddress) {
-        this.homeAddress = homeAddress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public List<Order> getOrders() {

@@ -29,12 +29,7 @@ public class JpaMain {
             address.setStreet("street");
             address.setZipcode("1000");
 
-            Period period = new Period();
-            period.setStartDate(LocalDateTime.now().minusMonths(2));
-            period.setEndDate(LocalDateTime.now());
-
-            member.setHomeAddress(address);
-            member.setWorkPeriod(period);
+            member.setAddress(address);
 
             em.persist(member);
 
